@@ -32,7 +32,19 @@ export async function getWvUri(context: vscode.ExtensionContext, manually: boole
 
 export async function setWvContent(webview: vscode.Webview, uri: vscode.Uri): Promise<void> {
   if (uri.scheme === "file") {
-    uri = webview.asWebviewUri(vscode.Uri.file(uri.fsPath + ".html"));
+    const alternative = vscode.workspace
+      .getConfiguration("cppref.alternative")
+      .get("enabled");
+    if (alternative) {
+      let url: string = vscode.workspace.getConfiguration("cppref.alternative").get("url")!;
+      if (url == "https://cppreference.cn/w/" || url == "https://cppreference.cn/w") {
+        uri = webview.asWebviewUri(vscode.Uri.file(uri.fsPath));
+      } else {
+        uri = webview.asWebviewUri(vscode.Uri.file(uri.fsPath + ".html"));
+      }
+    } else {
+      uri = webview.asWebviewUri(vscode.Uri.file(uri.fsPath + ".html"));
+    }
   }
   const invertColor = shouldInvert();
   webview.html = `<!DOCTYPE html>

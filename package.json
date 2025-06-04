@@ -1,13 +1,12 @@
 {
   "name": "cpp-reference",
   "displayName": "Cpp Reference",
-  "description": "View CppReference.com in VS Code",
+  "description": "View CppReference.com in VS Code. Based on Guyutongxue.",
   "version": "0.2.5",
-  "publisher": "Guyutongxue",
+  "publisher": "JaderoChan",
   "author": {
-    "name": "Guyutongxue",
-    "url": "https://guyutongxue.github.io",
-    "email": "guyutongxue@163.com"
+    "name": "JaderoChan",
+    "url": "https://github.com/JaderoChan"
   },
   "engines": {
     "vscode": "^1.75.0",
@@ -16,7 +15,7 @@
   "icon": "img/logo.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Guyutongxue/VSC_CppReference.git"
+    "url": "https://github.com/JaderoChan/VSC_CppReference"
   },
   "categories": [
     "Other",
@@ -99,7 +98,7 @@
           "cppref.alternative.url": {
             "type": "string",
             "title": "Alternative URL",
-            "markdownDescription": "Write your alternative cppreference.com base URL here, like `https://guyutongxue.gitee.io/cppref/zh/`.",
+            "markdownDescription": "Write your alternative cppreference.com base URL here, like `https://guyutongxue.gitee.io/cppref/zh/`. Extra: `https://cppreference.cn/w/`",
             "default": ""
           },
           "cppref.searchEngine": {
